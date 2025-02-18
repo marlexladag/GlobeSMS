@@ -8,10 +8,12 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('globesms_table', function (Blueprint $table) {
+        Schema::create('sms_messages', function (Blueprint $table) {
             $table->id();
-            // add more sen
-
+            $table->integer('sender_id');
+            $table->integer('recipient_id');
+            $table->string('message');
+            $table->string('status');
             $table->timestamps();
         });
     }
